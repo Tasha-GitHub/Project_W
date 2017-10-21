@@ -9,4 +9,5 @@ require('../styles/main.scss');
 $(document).ready(() => {
     console.log('foo bar');
     require('./homepage.js');
-})
+    require('./polaroids');
+});
