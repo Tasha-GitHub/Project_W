@@ -39,6 +39,11 @@ module.exports = {
           'style-loader',
           'css-loader!postcss!sass-loader?outputStyle=expanded'
         )
+      },
+            {
+        test: /\.(png|jpg|gif)$/,
+            loader: 'file-loader',
+            
       }
     ]
   },
