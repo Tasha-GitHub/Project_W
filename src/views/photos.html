@@ -6,7 +6,28 @@
   <link rel="stylesheet" href="dist/app.css" />
 </head>
 <body>
-  <div class="test">Hello World</div>
+  <!-- NAV START -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="itinerary.html">Itinerary</a></li>
+          <li class="active"><a href="photos.html">Photos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- NAV END -->
   <div>
 
   <!-- Nav tabs -->
@@ -14,10 +35,8 @@
     <li role="presentation" class="cols-xs-3 active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
     <li role="presentation" class="cols-xs-3"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-    <li role="presentation"><a href="photos.html" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
   </ul>
-
-  <a href="photos.html">Settings</a>
 
   <!-- Tab panes -->
   <div class="tab-content">
