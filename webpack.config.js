@@ -10,6 +10,11 @@ require('es6-promise').polyfill();
 module.exports = {
   entry: './src/scripts/main.js',
 
+  devServer: {
+    contentBase: './src/views',
+    inline: true
+  },
+
   output: {
     path: __dirname,
     filename: 'dist/app.js'
