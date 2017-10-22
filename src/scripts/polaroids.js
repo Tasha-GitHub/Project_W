@@ -1,39 +1,43 @@
 (() => {
-    var zIndex= 1, endTop=0, endLeft=450;
+    const endTop = 0;
+    const endLeft = 450;
+    let zIndex= 1;
 
-    function randRotation(el){
-        var rot = Math.round( Math.random() * 90-45);
+    const randRotation = (el) => {
+        const rotation = Math.round( Math.random() * 90-45);
         return $(el).css({
-            '-webkit-transform':'rotate('+rot+'deg)'
-            ,'-moz-transform':'rotate('+rot+'deg)'
-            ,'transform':'rotate('+rot+'deg)'
+            '-webkit-transform':'rotate('+rotation+'deg)'
+            ,'-moz-transform':'rotate('+rotation+'deg)'
+            ,'transform':'rotate('+rotation+'deg)'
         });
     }
 
-    $('.gallery li').each(function(){
+    $('.gallery li').each(function() {
         randRotation(this).css({
             top:Math.round(Math.random()*50-25)
             ,left:Math.round(Math.random()*50-25)
             ,'zIndex': zIndex++
         })
-        .click(function(){
-            var myZindex = $(this).css('zIndex');
+        .click(() => {
+            const myZindex = $(this).css('zIndex');
             $('.gallery li').not(this).each(function(){
                 if( $(this).css('zIndex') > myZindex ){
                     $(this).css('zIndex',$(this).css('zIndex')-1);
                 }
             });
-            if(! $(this).is('.active')){
+            if(!$(this).is('.active')){
                 $(this).toggleClass('active')
                 .animate({
                     top:endTop
                     ,left:endLeft
                 })
                 .css({zIndex:$('.gallery li').length });
-                var activated=$('.gallery .active').not(this);
+                const activated=$('.gallery .active').not(this);
                 activated.length && activated.click();
             }else{
-                $('.gallery li').each(function(){$(this).css('zIndex',parseInt($(this).css('zIndex'),10)+1)});
+                $('.gallery li').each(() => {
+                    $(this).css('zIndex',parseInt($(this).css('zIndex'),10)+1)
+                });
                 randRotation($(this).toggleClass('active'))
                 .animate({
                     top:Math.round(Math.random()*50-25)
